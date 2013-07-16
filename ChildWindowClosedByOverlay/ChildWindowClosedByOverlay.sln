@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OverlayClosingBehaviorProject", "OverlayClosingBehaviorProject\OverlayClosingBehaviorProject.csproj", "{37E23400-E401-4874-AD12-FBD561243438}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChildWindowWithClosingOverlayProject", "ChildWindowWithClosingOverlayProject\ChildWindowWithClosingOverlayProject.csproj", "{360CADF2-98C3-405B-9597-9A2D1C95F850}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeTraversingProject", "TreeTraversingProject\TreeTraversingProject.csproj", "{11F3A059-F592-45B4-B9AD-78BF2048643D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChildWindowClosedByOverlay.Silverlight", "ChildWindowClosedByOverlay.Silverlight\ChildWindowClosedByOverlay.Silverlight.csproj", "{6D3AAAA6-C608-4475-8B0C-D58F068A63C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChildWindowClosedByOverlay.Silverlight.Web", "ChildWindowClosedByOverlay.Silverlight.Web\ChildWindowClosedByOverlay.Silverlight.Web.csproj", "{8C2D0437-4525-447E-8FC3-7E5AACE975CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37E23400-E401-4874-AD12-FBD561243438}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37E23400-E401-4874-AD12-FBD561243438}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37E23400-E401-4874-AD12-FBD561243438}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37E23400-E401-4874-AD12-FBD561243438}.Release|Any CPU.Build.0 = Release|Any CPU
+		{360CADF2-98C3-405B-9597-9A2D1C95F850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{360CADF2-98C3-405B-9597-9A2D1C95F850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{360CADF2-98C3-405B-9597-9A2D1C95F850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{360CADF2-98C3-405B-9597-9A2D1C95F850}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11F3A059-F592-45B4-B9AD-78BF2048643D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11F3A059-F592-45B4-B9AD-78BF2048643D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11F3A059-F592-45B4-B9AD-78BF2048643D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11F3A059-F592-45B4-B9AD-78BF2048643D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D3AAAA6-C608-4475-8B0C-D58F068A63C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D3AAAA6-C608-4475-8B0C-D58F068A63C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D3AAAA6-C608-4475-8B0C-D58F068A63C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D3AAAA6-C608-4475-8B0C-D58F068A63C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C2D0437-4525-447E-8FC3-7E5AACE975CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C2D0437-4525-447E-8FC3-7E5AACE975CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C2D0437-4525-447E-8FC3-7E5AACE975CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C2D0437-4525-447E-8FC3-7E5AACE975CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

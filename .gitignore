@@ -1,0 +1,5 @@
+_ReSharper.ChildWindowClosedByOverlay
+obj
+Bin
+*.user
+*.suo
