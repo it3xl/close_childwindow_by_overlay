@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Windows;
 using System.Windows.Controls;
 using ClosingOverlayBaseProject;
-using TreeTraversingProject;
 
 namespace ChildWindowWithClosingOverlayProject
 {
@@ -22,178 +20,47 @@ namespace ChildWindowWithClosingOverlayProject
 		{
 			_closingOverlayController = new ClosingOverlayController(this, Close);
 
-			ChildWindow.Loaded += ChildWindowLoaded;
-			ChildWindow.Unloaded += ChildWindowUnloaded;
+			Loaded += _closingOverlayController.ChildWindowLoaded;
+			Unloaded += _closingOverlayController.ChildWindowUnloaded;
 		}
 
-		private ClosingOverlayController _closingOverlayController;
+		/// <summary>
+		/// <see cref="ClosingOverlayController"/>
+		/// </summary>
+		private readonly ClosingOverlayController _closingOverlayController;
 
 		/// <summary>
 		/// Disable the closing by the overlay from XAML or before the Load event.
 		/// </summary>
-		public Boolean DisabledClosingOverlay { get; set; }
+		public Boolean DisabledClosingOverlay
+		{
+			get
+			{
+				return _closingOverlayController.DisabledClosingOverlay;
+			}
+			set
+			{
+				_closingOverlayController.DisabledClosingOverlay = value;
+			}
+		}
 
 		/// <summary>
 		/// The sign that the right mouse button is closing too, by clicking on the overlay.
 		/// </summary>
-		public Boolean RightMouseButtonClosingTo { get; set; }
-
-		/// <summary>
-		/// The associated <see cref="ChildWindow"/>.
-		/// </summary>
-		private ChildWindow ChildWindow
+		public Boolean RightMouseButtonClosingTo
 		{
 			get
 			{
-				return this;
+				return _closingOverlayController.RightMouseButtonClosingTo;
 			}
-		}
-
-		/// <summary>
-		/// The default overlay of the <see cref="ChildWindow"/>.
-		/// </summary>
-		private FrameworkElement OverlayFromTemplate
-		{
-			get
+			set
 			{
-				var childWindow = ChildWindow;
-				if (childWindow == null)
-				{
-					return null;
-				}
-
-				var dependencyOverlay = childWindow.GetChildByName("Overlay");
-				var elementOverlay = dependencyOverlay as FrameworkElement;
-
-				return elementOverlay;
+				_closingOverlayController.RightMouseButtonClosingTo = value;
 			}
 		}
 
-		/// <summary>
-		/// The <see cref="ChildWindow"/>.<see cref="FrameworkElement.Loaded"/> event handler.
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="routedEventArgs"></param>
-		private void ChildWindowLoaded(object sender, RoutedEventArgs routedEventArgs)
-		{
-			// The first Loaded event fired before elements form templates created.
-			// We must use the delayed invoking.
-			ProcessAfterTemplatedChildrenCreated();
-		}
-
-		/// <summary>
-		/// Invokes a passed action after creating of children controls in templates.
-		/// </summary>
-		/// <remarks>
-		/// The first Loaded event fired before elements form templates created.
-		/// We must use the delayed invoking.
-		/// </remarks>
-		private void ProcessAfterTemplatedChildrenCreated()
-		{
-			Deployment.Current.Dispatcher.BeginInvoke(CheckerWithRecursionOrProceedExecution);
-		}
-
-		/// <summary>
-		/// The recursion's max amount.
-		/// </summary>
-		private const Int32 FranticRecursionMaxAmount = 50;
-		/// <summary>
-		/// The recursion's counter.
-		/// </summary>
-		private Int32 _recursionCounter;
-
-		/// <summary>
-		/// Checks the Overlay of the <see cref="ChildWindow"/> exist.<para/>
-		/// Will proceed the execution if it exist.
-		/// </summary>
-		private void CheckerWithRecursionOrProceedExecution()
-		{
-			if(_recursionCounter == FranticRecursionMaxAmount)
-			{
-				// It's a sily case. I'd never seen this. But we should be aware about it.
-				// Let's interrupt the behaviour, cause it something strange and need investigations.
-
-				return;
-			}
-
-			if (ChildWindow.HasChildren() == false)
-			{
-				// The real case when children elements from the ChildWindow template very delayed with creation.
-
-				_recursionCounter++;
-				ProcessAfterTemplatedChildrenCreated();
-
-				return;
-			}
-			_recursionCounter = 0;
-
-			var overlay = OverlayFromTemplate;
-			if (overlay == null)
-			{
-				// The overley not exist.
-				// Maybe you have changed a ChildWindow control template.
-
-				// Let's interrupt the behaviour!
-				return;
-			}
-
-			SetOverlayCloseEvents();
-		}
-
-		private void ChildWindowUnloaded(object sender, RoutedEventArgs routedEventArgs)
-		{
-			UnsetOverlayCloseEvents();
-		}
 
 
-		/// <summary>
-		/// Turns on this behaviour.
-		/// </summary>
-		private void SetOverlayCloseEvents()
-		{
-			var overlay = OverlayFromTemplate;
-			if (overlay == null)
-			{
-				return;
-			}
 
-			overlay.MouseLeftButtonUp += Overlay_MouseSomeButtonUp;
-
-			if (RightMouseButtonClosingTo)
-			{
-				overlay.MouseRightButtonDown += Overlay_MouseSomeButtonUp;
-			}
-		}
-
-		/// <summary>
-		/// Workaround for memory leaks.
-		/// </summary>
-		private void UnsetOverlayCloseEvents()
-		{
-			var overlay = OverlayFromTemplate;
-			if (overlay == null)
-			{
-				return;
-			}
-
-			overlay.MouseLeftButtonUp -= Overlay_MouseSomeButtonUp;
-			overlay.MouseRightButtonDown -= Overlay_MouseSomeButtonUp;
-		}
-
-		/// <summary>
-		/// The overley's click event handler.
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void Overlay_MouseSomeButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
-		{
-			ChildWindow.Close();
-
-			// It's a workaround for the abnormal controls blocking.
-			// It will happen when we click faster on the overlay before a ChildWindow was opened.
-			// http://stackoverflow.com/questions/6456952/silverlight-modal-childwindow-keeps-parent-grayed-after-closing
-			// http://social.msdn.microsoft.com/Forums/silverlight/en-US/89d38ae0-5d55-4b6e-9981-894321082a07/childwindow-blocks-the-main-window-perminently
-			Application.Current.RootVisual.SetValue(IsEnabledProperty, true);
-		}
 	}
 }
