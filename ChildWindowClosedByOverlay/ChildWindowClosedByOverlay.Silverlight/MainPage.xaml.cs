@@ -34,7 +34,7 @@ namespace ChildWindowClosedByOverlay.Silverlight
 			var content = new TextBlock
 			{
 				Margin = new Thickness(30, 30, 30, 30),
-				Text = "Touch my Overlay to close me.\n\nI has the Behaviour.",
+				Text = "Touch my Overlay to close me.\n\nI have the OverlayClosingBehavior.",
 				FontWeight = FontWeights.Bold,
 			};
 
@@ -55,7 +55,7 @@ namespace ChildWindowClosedByOverlay.Silverlight
 			var content = new TextBlock
 			{
 				Margin = new Thickness(30, 30, 30, 30),
-				Text = "Touch my Overlay to close me.\n\nI has no the Behaviour.",
+				Text = "Touch my Overlay to close me.\n\nI have no Silverlight's behaviors.",
 				FontWeight = FontWeights.Bold,
 			};
 

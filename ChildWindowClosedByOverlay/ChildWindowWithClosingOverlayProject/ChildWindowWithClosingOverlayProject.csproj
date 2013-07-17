@@ -65,9 +65,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TreeTraversingProject\TreeTraversingProject.csproj">
-      <Project>{11f3a059-f592-45b4-b9ad-78bf2048643d}</Project>
-      <Name>TreeTraversingProject</Name>
+    <ProjectReference Include="..\ClosingOverlayBaseProject\ClosingOverlayBaseProject.csproj">
+      <Project>{71461895-6643-4a6b-a92c-9731394a6122}</Project>
+      <Name>ClosingOverlayBaseProject</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />

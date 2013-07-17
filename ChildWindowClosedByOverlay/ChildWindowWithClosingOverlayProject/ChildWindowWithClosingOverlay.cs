@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using ClosingOverlayBaseProject;
 using TreeTraversingProject;
 
 namespace ChildWindowWithClosingOverlayProject
@@ -19,9 +20,13 @@ namespace ChildWindowWithClosingOverlayProject
 	{
 		public ChildWindowWithClosingOverlay()
 		{
+			_closingOverlayController = new ClosingOverlayController(this, Close);
+
 			ChildWindow.Loaded += ChildWindowLoaded;
 			ChildWindow.Unloaded += ChildWindowUnloaded;
 		}
+
+		private ClosingOverlayController _closingOverlayController;
 
 		/// <summary>
 		/// Disable the closing by the overlay from XAML or before the Load event.
@@ -89,19 +94,38 @@ namespace ChildWindowWithClosingOverlayProject
 		}
 
 		/// <summary>
+		/// The recursion's max amount.
+		/// </summary>
+		private const Int32 FranticRecursionMaxAmount = 50;
+		/// <summary>
+		/// The recursion's counter.
+		/// </summary>
+		private Int32 _recursionCounter;
+
+		/// <summary>
 		/// Checks the Overlay of the <see cref="ChildWindow"/> exist.<para/>
 		/// Will proceed the execution if it exist.
 		/// </summary>
 		private void CheckerWithRecursionOrProceedExecution()
 		{
+			if(_recursionCounter == FranticRecursionMaxAmount)
+			{
+				// It's a sily case. I'd never seen this. But we should be aware about it.
+				// Let's interrupt the behaviour, cause it something strange and need investigations.
+
+				return;
+			}
+
 			if (ChildWindow.HasChildren() == false)
 			{
 				// The real case when children elements from the ChildWindow template very delayed with creation.
 
+				_recursionCounter++;
 				ProcessAfterTemplatedChildrenCreated();
 
 				return;
 			}
+			_recursionCounter = 0;
 
 			var overlay = OverlayFromTemplate;
 			if (overlay == null)
