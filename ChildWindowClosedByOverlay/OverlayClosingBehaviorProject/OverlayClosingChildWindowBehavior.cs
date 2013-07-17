@@ -23,6 +23,7 @@ namespace OverlayClosingBehaviorProject
 		/// </summary>
 		private ClosingOverlayController _closingOverlayController;
 
+		public Boolean _disabledClosingOverlay;
 		/// <summary>
 		/// Disable the closing by the overlay from XAML or before the Load event.
 		/// </summary>
@@ -30,14 +31,27 @@ namespace OverlayClosingBehaviorProject
 		{
 			get
 			{
+				if (_closingOverlayController == null)
+				{
+					return _disabledClosingOverlay;
+				}
+
 				return _closingOverlayController.DisabledClosingOverlay;
 			}
 			set
 			{
+				if (_closingOverlayController == null)
+				{
+					_disabledClosingOverlay = value;
+
+					return;
+				}
+
 				_closingOverlayController.DisabledClosingOverlay = value;
 			}
 		}
 
+		public Boolean _rightMouseButtonClosingTo;
 		/// <summary>
 		/// The sign that the right mouse button is closing too, by clicking on the overlay.
 		/// </summary>
@@ -45,10 +59,22 @@ namespace OverlayClosingBehaviorProject
 		{
 			get
 			{
+				if (_closingOverlayController == null)
+				{
+					return _rightMouseButtonClosingTo;
+				}
+
 				return _closingOverlayController.RightMouseButtonClosingTo;
 			}
 			set
 			{
+				if (_closingOverlayController == null)
+				{
+					_rightMouseButtonClosingTo = value;
+
+					return;
+				}
+
 				_closingOverlayController.RightMouseButtonClosingTo = value;
 			}
 		}
@@ -78,6 +104,10 @@ namespace OverlayClosingBehaviorProject
 			}
 
 			_closingOverlayController = new ClosingOverlayController(ChildWindow, ChildWindow.Close);
+
+			// Workaround for the late initializing of the _closingOverlayController;
+			_closingOverlayController.DisabledClosingOverlay = _disabledClosingOverlay;
+			_closingOverlayController.RightMouseButtonClosingTo = _rightMouseButtonClosingTo;
 
 			ChildWindow.Loaded += _closingOverlayController.ChildWindowLoaded;
 			ChildWindow.Unloaded += _closingOverlayController.ChildWindowUnloaded;
