@@ -26,7 +26,7 @@ namespace ClosingOverlayBaseProject
 		/// <summary>
 		/// The associated ChildWindow.
 		/// </summary>
-		private readonly FrameworkElement _childWindow;
+		private FrameworkElement _childWindow;
 
 		/// <summary>
 		/// The associated ChildWindow's Close method.
@@ -190,8 +190,14 @@ namespace ClosingOverlayBaseProject
 			Application.Current.RootVisual.SetValue(Control.IsEnabledProperty, true);
 		}
 
-
-
-
+		/// <summary>
+		/// This method intended to treat memory leaks of Silverlight behaviours.
+		/// It's not tested for leaks.
+		/// </summary>
+		public void DestroyForSakeSilverlightsBehaviour()
+		{
+			_childWindow = null;
+			_close = null;
+		}
 	}
 }

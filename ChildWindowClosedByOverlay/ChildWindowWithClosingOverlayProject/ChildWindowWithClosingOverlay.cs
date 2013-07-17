@@ -59,8 +59,5 @@ namespace ChildWindowWithClosingOverlayProject
 			}
 		}
 
-
-
-
 	}
 }
