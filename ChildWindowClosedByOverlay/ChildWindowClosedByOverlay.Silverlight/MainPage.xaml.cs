@@ -46,7 +46,7 @@ namespace ChildWindowClosedByOverlay.Silverlight
 				OverlayOpacity = 0.4,
 				HasCloseButton = false,
 			}
-				.Show();
+			.Show();
 		}
 
 
@@ -69,11 +69,12 @@ namespace ChildWindowClosedByOverlay.Silverlight
 
 				Title = "ChildWindow closed by Overlay",
 				Content = content,
+
 				OverlayBrush = new SolidColorBrush(Colors.Gray),
 				OverlayOpacity = 0.4,
 				HasCloseButton = false,
 			}
-				.Show();
+			.Show();
 		}
 
 
