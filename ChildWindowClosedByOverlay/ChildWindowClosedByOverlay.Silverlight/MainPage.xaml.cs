@@ -1,11 +1,12 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using ChildWindowClosedByOverlay.Silverlight.View;
 using ChildWindowWithClosingOverlayProject;
 
 namespace ChildWindowClosedByOverlay.Silverlight
 {
-	public partial class MainPage : UserControl
+	public partial class MainPage
 	{
 		public MainPage()
 		{
@@ -38,7 +39,7 @@ namespace ChildWindowClosedByOverlay.Silverlight
 				FontWeight = FontWeights.Bold,
 			};
 
-			new TestChildWindow
+			new TestChildWindowWithBehaviour
 			{
 				Title = "ChildWindow closed by Overlay",
 				Content = content,

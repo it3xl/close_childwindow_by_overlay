@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Media;
 using System;
 
-namespace TreeTraversingProject
+namespace ClosingOverlayBaseProject
 {
 	/// <summary>
 	/// Some subset of traversing methods for a elements tree.

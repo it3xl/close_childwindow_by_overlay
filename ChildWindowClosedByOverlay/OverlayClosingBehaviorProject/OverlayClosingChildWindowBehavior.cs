@@ -3,7 +3,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Interactivity;
 using ClosingOverlayBaseProject;
-using TreeTraversingProject;
 
 namespace OverlayClosingBehaviorProject
 {

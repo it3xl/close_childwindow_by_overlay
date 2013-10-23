@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChildWindowClosedByOverlay.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClosingOverlayBaseProject", "ClosingOverlayBaseProject\ClosingOverlayBaseProject.csproj", "{71461895-6643-4A6B-A92C-9731394A6122}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leak.Test.ClosingOverlay.Silverlight", "Leak.Test.ClosingOverlay.Silverlight\Leak.Test.ClosingOverlay.Silverlight.csproj", "{A091B303-7F49-4B74-ABF6-5499FA98DD85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{71461895-6643-4A6B-A92C-9731394A6122}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71461895-6643-4A6B-A92C-9731394A6122}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71461895-6643-4A6B-A92C-9731394A6122}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A091B303-7F49-4B74-ABF6-5499FA98DD85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A091B303-7F49-4B74-ABF6-5499FA98DD85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A091B303-7F49-4B74-ABF6-5499FA98DD85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A091B303-7F49-4B74-ABF6-5499FA98DD85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
