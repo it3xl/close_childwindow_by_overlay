@@ -4,6 +4,9 @@ using System.Windows.Controls;
 
 namespace ClosingOverlayBaseProject
 {
+	/// <summary>
+	/// The controller that manages key logic and states for closing the ChildWindow control by its Overley.
+	/// </summary>
 	public class ClosingOverlayController
 	{
 		public ClosingOverlayController(FrameworkElement childWindow, Action closeAction)
