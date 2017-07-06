@@ -1,32 +1,27 @@
-# close_childwindow_by_overlay
+# Close the ChildWindow by its Overlay
 
-**Project Description**
-The fastest and proven solution to make you ChildWindows closed by its overlay.
-
-It's the ChildWindow Closed By Overlay solution.
+### The Silverlight's fastest and proven solution to make you ChildWindows control to be closed by its overlay.
 
 You may use:
-# Silverlight Behaviour,
-# simple inheritance from the tweaked CildWindow,
-# instantiating of the  tweaked CildWindow class,
-# or both.
+1. Silverlight Behaviour,
+1. simple inheritance from the tweaked CildWindow,
+1. instantiating of the tweaked CildWindow class,
+1. or both.
 
-The main idea of this project is to deliver the following things.
-:1. Guaranteed closing of the ChildWindow the first time.
-:2. Resolve the locking problem of RootVisual's controls after a ChildWindow closing.
-:3. Get a complete and proven solution.
-:4. Save the own time.
-
-# and !
-
-:5. **I humbly hope that this common in the world of WEB 2.0 approach will be included in the ChildWindow.**
+The main idea of this project is to deliver the following things:
+1. Guarantee closing of your ChildWindow by a first tap on its overlay.
+1. Resolve the locking problem of RootVisual's controls after a ChildWindow will be closed.
+1. Get a complete and proven solution at once00.
+1. Save the own time.
+1. and I humbly hope that this common in the world of WEB 2.0 approach will be included to the Silverlight ChildWindow control.
 
 
-**How to use**
-Add .dll files to your project from the **DOWNLOAD** menu link above.
-Use the next in code:
+## How to use
 
-:1. By the behavior 
+Add .dll files of this project to your project.<br/>
+Use one of next code approaches:
+
+### By the behavior 
 {code:xml}
 <controls:ChildWindow
     x:Class="ChildWindowClosedByOverlay.Silverlight.TestChildWindow"
@@ -46,7 +41,7 @@ Use the next in code:
 <!-- ... -->
 {code:xml}
 
-:2. By the inheritance or instantiating
+### By the inheritance or instantiating
 {code:c#}
 	new ChildWindowWithClosingOverlay
 	{
@@ -66,12 +61,14 @@ Use the next in code:
 	.Show();
 
 {code:c#}
-----
-**Live example:**
-[ChildWindow Closed By Overlay solution](http://it3xl.ru/Resources_For_External/codeplex/CloseChildWindowByOverlay/ChildWindowClosedByOverlay.Silverlight.Web/)
 
 ----
+
+## Live example
+[ChildWindow Closed By Overlay solution](http://it3xl.ru/Resources_For_External/codeplex/CloseChildWindowByOverlay/ChildWindowClosedByOverlay.Silverlight.Web/)
+
 **The example's screenshort:**
-![](Home_http://it3xl.ru/Resources_For_External/codeplex/CloseChildWindowByOverlay/how_it_looks.jpg)
+
+![Close the ChildWindow by its Overlay screenshort](http://it3xl.ru/Resources_For_External/codeplex/CloseChildWindowByOverlay/how_it_looks.jpg)
 
 it3xl.com
