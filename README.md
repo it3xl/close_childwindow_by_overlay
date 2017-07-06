@@ -43,24 +43,23 @@ Use one of next code approaches:
 
 ### By the inheritance or instantiating
 
-```:c#
-	new ChildWindowWithClosingOverlay
-	{
+```cs
+new ChildWindowWithClosingOverlay
+{
 
-		// !!! Custom settings.
-		DisabledClosingOverlay = false,
-		RightMouseButtonClosingTo = false,
+  // !!! Custom settings.
+  DisabledClosingOverlay = false,
+  RightMouseButtonClosingTo = false,
 
 
-		Title = "ChildWindow closed by Overlay",
-		Content = content,
+  Title = "ChildWindow closed by Overlay",
+  Content = content,
 
-		OverlayBrush = new SolidColorBrush(Colors.Gray),
-		OverlayOpacity = 0.4,
-		HasCloseButton = false,
-	}
-	.Show();
-
+  OverlayBrush = new SolidColorBrush(Colors.Gray),
+  OverlayOpacity = 0.4,
+  HasCloseButton = false,
+}
+.Show();
 ```
 
 ----
