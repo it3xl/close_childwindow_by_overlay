@@ -2,6 +2,8 @@
 
 ### The Silverlight's fastest and proven solution to make you ChildWindows control to be closed by its overlay.
 
+[Created Dec 24, 2013; Migrated from CodePlex](https://closechildwindowbyoverlay.codeplex.com/)
+
 You may use:
 1. Silverlight Behaviour,
 1. simple inheritance from the tweaked CildWindow,
