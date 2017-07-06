@@ -22,7 +22,7 @@ Add .dll files of this project to your project.<br/>
 Use one of next code approaches:
 
 ### By the behavior 
-{code:xml}
+```xml
 <controls:ChildWindow
     x:Class="ChildWindowClosedByOverlay.Silverlight.TestChildWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
@@ -39,10 +39,11 @@ Use one of next code approaches:
         />
     </i:Interaction.Behaviors>
 <!-- ... -->
-{code:xml}
+```
 
 ### By the inheritance or instantiating
-{code:c#}
+
+```:c#
 	new ChildWindowWithClosingOverlay
 	{
 
@@ -60,11 +61,11 @@ Use one of next code approaches:
 	}
 	.Show();
 
-{code:c#}
+```
 
 ----
 
-## Live example
+## Silverlight's live example
 [ChildWindow Closed By Overlay solution](http://it3xl.ru/Resources_For_External/codeplex/CloseChildWindowByOverlay/ChildWindowClosedByOverlay.Silverlight.Web/)
 
 **The example's screenshort:**
