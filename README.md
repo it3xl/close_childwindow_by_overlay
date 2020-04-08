@@ -73,4 +73,4 @@ new ChildWindowWithClosingOverlay
 
 ![Close the ChildWindow by its Overlay screenshort](http://it3xl.ru/Resources_For_External/codeplex/CloseChildWindowByOverlay/how_it_looks.jpg)
 
-it3xl.com
+it3xl.ru
